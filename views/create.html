@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="../public/stylesheets/style.css">
+  <!-- JQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>CampLit</title>
+</head>
+
+<body class="bg-light">
+  <!-- HEADER -->
+  <div class="bg-primary p-4">
+    <button type="button" class="btn btn-light shadow-sm" style="visibility: hidden">Create New Topic +</button>
+    <h1 class="display-4 text-center font-weight-bold text-white pb-2">CampLit</h1>
+  </div>
+  <!-- MAIN -->
+  <main class="container pt-4">
+    <div class="card mb-3 bg-white">
+      <div class="flip-card mb-3 ">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <!--Card content-->
+            <div class="card-body">
+              <!--Title-->
+              <h4 class="card-title">Card title 1</h4>
+              <!--Text-->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+              <button class="btn btn-primary" id="btnflip1">Front</button>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <!--Card content-->
+            <div class="card-body" style="border:0;">
+              <!--Title-->
+              <h4 class="card-title">Card title 2</h4>
+              <!--Text-->
+              <p class="card-text">This is the back</p>
+              <button class="btn btn-primary" id="btnflip2">Back</button>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- JS -->
+  <script src="../public/js/card.js"></script>
+
+</body>
+
+</html>
