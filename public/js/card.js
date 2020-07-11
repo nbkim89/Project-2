@@ -1,5 +1,5 @@
-$('.flip-card').on('click', 
+$('.btn-flip').on('click', 
   function(){
-    $(this).toggleClass('flipped')
+    $('.flip-card').toggleClass('flipped');
   }
 )
