@@ -15,10 +15,6 @@
   box-shadow: 0 8px 10px 0 rgba(90,90,90,0.2)
 }
 
-/* .flipped .flip-card-back input {
-  transform: rotate(180deg);
-} */
-
 
 .flip-card.flipped .flip-card-inner {   
   transform: rotateY(180deg);
@@ -50,6 +46,9 @@
   backface-visibility: hidden;
 }
 
+.add-card {
+  transform: none !important;
+}
 
 /* * {
   border: 1px pink solid;
