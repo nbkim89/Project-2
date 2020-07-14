@@ -15,12 +15,9 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    topic: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+    topicId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   });
   return Card;
