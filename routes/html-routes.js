@@ -28,9 +28,9 @@ module.exports = function(app) {
   });
 
   // If no matching route is found default to home.
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  // });
 
   // Route for displaying all the topic cards ("main.html")
   app.get("/main", (req, res) => {
