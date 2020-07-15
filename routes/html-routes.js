@@ -26,4 +26,24 @@ module.exports = function(app) {
   app.get("/members", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  // If no matching route is found default to home.
+  // app.get("*", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  // });
+
+  // Route for displaying all the topic cards ("main.html")
+  app.get("/main", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/main.html"));
+  });
+
+  // Route for displaying the page to create a new topic ("topic.html")
+  app.get("/topic", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/topic.html"));
+  });
+
+  // Route for displaying the page  to create a new card("create.html")
+  app.get("/new", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/create.html"));
+  });
 };
