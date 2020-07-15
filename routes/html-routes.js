@@ -58,24 +58,27 @@ module.exports = function(app) {
       limit: 1,
       order: [ [ 'createdAt', 'DESC' ]]
     }).then(function(data){
-      debugger;
       var topicObject = {
         topic: data
       };//only difference is that you get users list limited to 1
       //entries[0]
-      console.log(data)
       res.render("create", topicObject);
     }); 
   });
 
-  app.get("/view/:id", (req, res) => {
+  app.get("/view/:id/:card", (req, res) => {
     db.Card.findAll({
+      raw: true,
       where: {
         topicId: req.params.id
       }
     }).then(dbCard => {
-      res.json(dbCard);
+      // dbCard gets an array of all the cards for this subject
+      var cardObject = {
+        // This gets one card in the array referencing the :card param
+        card: dbCard[req.params.card]
+      }
+      res.render("view", cardObject);
     });
-    // res.render("view");
   });
 };
