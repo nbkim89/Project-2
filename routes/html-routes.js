@@ -4,6 +4,9 @@ const path = require("path");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
+// Requiring our models
+var db = require("../models");
+
 module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
@@ -32,18 +35,47 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/home.html"));
   // });
 
-  // Route for displaying all the topic cards ("main.html")
+  // Route for displaying all the topic cards ("index.handlebars")
   app.get("/main", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/main.html"));
+    db.Topic.findAll({ raw: true }).then(function(data) {
+      var topicsObject = {
+        topic: data
+      };
+      res.render("index", topicsObject);
+    });
+
   });
 
-  // Route for displaying the page to create a new topic ("topic.html")
+  // Route for displaying the page to create a new topic ("topic.handlebars")
   app.get("/topic", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/topic.html"));
+    res.render("topic");
   });
 
-  // Route for displaying the page  to create a new card("create.html")
-  app.get("/new", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/create.html"));
+  // Route for displaying the page  to create a new card("create.handlebars")
+  app.get("/create", (req, res) => {
+    db.Topic.findAll({
+      raw: true,
+      limit: 1,
+      order: [ [ 'createdAt', 'DESC' ]]
+    }).then(function(data){
+      debugger;
+      var topicObject = {
+        topic: data
+      };//only difference is that you get users list limited to 1
+      //entries[0]
+      console.log(data)
+      res.render("create", topicObject);
+    }); 
+  });
+
+  app.get("/view/:id", (req, res) => {
+    db.Card.findAll({
+      where: {
+        topicId: req.params.id
+      }
+    }).then(dbCard => {
+      res.json(dbCard);
+    });
+    // res.render("view");
   });
 };
