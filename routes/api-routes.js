@@ -67,6 +67,15 @@ module.exports = function(app) {
     });
   });
 
+  // Route for displaying all cards of a single topic
+  app.get("/api/topics/:topic/cards", (req, res) => {
+    db.Card.findAll({
+      topicId: req.params.topic
+    }).then(dbCard => {
+      res.json(dbCard);
+    });
+  });
+
   // Route to create new topics
   app.post("/api/topics", (req, res) => {
     db.Topic.create({
