@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="../public/stylesheets/style.css">
-  <!-- JQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>CampLit</title>
-</head>
-
-<body class="bg-light h-100">
   <!-- HEADER -->
   <div class="bg-primary p-4">
     <div class="d-flex justify-content-end">
@@ -30,8 +15,8 @@
           <div class="flip-card-front">
             <div class="card-body bg-white border shadow text-center p-5">
               <!-- TERM GOES HERE-->
-              <h5 class="text-muted">Topic: (topic goes here)</h5>
-              <h4 class="pt-2">TERM</h4>
+              <h5 class="text-muted">Topic: {{card.topic}}</h5>
+              <h4 class="pt-2">{{card.term}}</h4>
               <button class="btn btn-primary mt-3 shadow-sm btn-flip" id="btnflip1">See Definition</button>
             </div>
 
@@ -46,8 +31,8 @@
           <div class="flip-card-back">
             <div class="card-body bg-white border shadow text-center p-5">
               <!--DEFINITION GOES HERE-->
-              <h5 class="text-muted">Topic: (topic goes here)</h5>
-              <h4 class="pt-2">DEFINITION</h4>
+              <h5 class="text-muted">Topic: {{card.topic}}</h5>
+              <h4 class="pt-2">{{card.definition}}</h4>
               <button class="btn btn-primary mt-3 shadow-sm btn-flip" id="btnflip2">See Term</button>
             </div>
 
@@ -62,9 +47,3 @@
     </div>
     
   </main>
-  <!-- JS -->
-  <script src="../public/js/card.js"></script>
-
-</body>
-
-</html>
