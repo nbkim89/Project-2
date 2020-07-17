@@ -1,51 +1,55 @@
 <!-- HEADER -->
-  <div class="bg-primary p-4">
-    <div class="d-flex justify-content-end">
-      <a href="/main" type="button" class="btn btn-light shadow-sm exit-save-topic">Exit and Save Topic</a>
-    </div>
-    <h1 class="display-4 text-center font-weight-bold text-white pb-2">CampLit</h1>
+<div class="bg-primary p-4">
+  <div class="d-flex justify-content-end">
+    <a href="/main" type="button" class="btn btn-light shadow-sm exit-save-topic">Exit and Save Topic</a>
   </div>
-  <!-- MAIN -->
-  <main class="container pt-5">
-    <div class="card" id="flip-card">
-      <div class="flip-card">
-        <div class="flip-card-inner d-flex justify-content-center">
+  <a class="d-flex justify-content-center" href="/main">
+    <img src="../public/assets/logo.png" alt="CampLit" class="img-fluid">
+  </a>
+</div>
+<!-- MAIN -->
+<main class="container pt-5">
+  <div class="card" id="flip-card">
+    <div class="flip-card">
+      <div class="flip-card-inner d-flex justify-content-center">
 
-          <!--****** CARD FRONT (TERM) ***** -->
-          <div class="flip-card-front">
-            <div class="card-body bg-white border shadow text-center p-5">
-              <!-- TERM GOES HERE-->
-              <h5 class="text-muted">Topic: {{topic.[0].subject}}</h5>
-              <div class="input-group input-group-lg front-input">
-                <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Term" id="term">
-              </div>
-              <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip1">Add Definition</button>
+        <!--****** CARD FRONT (TERM) ***** -->
+        <div class="flip-card-front">
+          <div class="card-body bg-white border shadow text-center p-5">
+            <!-- TERM GOES HERE-->
+            <h5 class="text-muted">Topic: {{topic.[0].subject}}</h5>
+            <div class="input-group input-group-lg front-input">
+              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Term" id="term">
             </div>
-
-            <div class="d-flex justify-content-end mt-4">
-              <a href="/create" type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
-            </div>
-
+            <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip1">Add Definition</button>
           </div>
 
-          <!-- ****** CARD BACK (DEFINITION) ***** -->
-          <div class="flip-card-back">
-            <div class="card-body bg-white border shadow text-center p-5">
-              <!--DEFINITION GOES HERE-->
-              <h5 class="text-muted">Topic: {{topic.[0].subject}}</h5>
-              <div class="input-group input-group-lg back-input">
-                <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Enter Definition" id="definition"> 
-              </div>
-              <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip2">Add Term</button>
-            </div>
-
-            <div class="d-flex justify-content-end mt-4">
-              <a href="/create"  type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
-            </div>
-            
+          <div class="d-flex justify-content-end mt-4">
+            <a href="/create" type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
           </div>
+
+        </div>
+
+        <!-- ****** CARD BACK (DEFINITION) ***** -->
+        <div class="flip-card-back">
+          <div class="card-body bg-white border shadow text-center p-5">
+            <!--DEFINITION GOES HERE-->
+            <h5 class="text-muted">Topic: {{topic.[0].subject}}</h5>
+            <div class="input-group input-group-lg back-input">
+              <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
+                placeholder="Enter Definition" id="definition">
+            </div>
+            <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip2">Add Term</button>
+          </div>
+
+          <div class="d-flex justify-content-end mt-4">
+            <a href="/create" type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
+          </div>
+
         </div>
       </div>
     </div>
-    
-  </main>
+  </div>
+
+</main>
