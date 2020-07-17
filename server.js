@@ -15,7 +15,7 @@ app.use(express.json());
 // Static directory 
 // Mount the middleware at "/static" to serve static content only when their request path is prefixed with "/static". 
 // REF: https://stackoverflow.com/questions/5924072/express-js-cant-get-my-static-files-why
-app.use("/public", express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'))
 // We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
