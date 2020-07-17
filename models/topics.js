@@ -9,5 +9,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+
+  Topic.associate = function(models) {
+    Topic.hasMany(models.Card, {
+      onDelete: "cascade"
+    });
+  }
   return Topic;
 };

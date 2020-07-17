@@ -20,5 +20,14 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
+
+  Card.associate = function(models) {
+    Card.belongsTo(models.Topic, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
+
   return Card;
 };
