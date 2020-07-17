@@ -1,26 +1,28 @@
 <!-- HEADER -->
-  <div class="bg-primary p-4">
-    <div class="d-flex justify-content-end">
-      <a href="/topic" type="button" class="btn btn-light shadow-sm new-topic">Create New Topic +</a>
-    </div>
-    <h1 class="display-4 text-center font-weight-bold text-white pb-2">CampLit</h1>
+<div class="bg-primary p-4">
+  <div class="d-flex justify-content-end">
+    <a href="/topic" type="button" class="btn btn-light shadow-sm new-topic">Create New Topic +</a>
   </div>
-  <!-- MAIN/CARD TOPICS -->
-  <main class="container pt-4">
-    <div class="row row-cols-1 row-cols-md-3">
+  <a class="d-flex justify-content-center" href="/main">
+    <img src="../public/assets/logo.png" alt="CampLit" class="img-fluid">
+  </a>
+</div>
+<!-- MAIN/CARD TOPICS -->
+<main class="container pt-4">
+  <div class="row row-cols-1 row-cols-md-3">
 
-      {{#each topic}}
-      <div class="col mb-4">
-        <a href="/view/{{this.id}}/0" class="topic-card card shadow-sm" data-topicId="{{this.id}}">
-            <div class="d-flex justify-content-end p-2">
-              <button type="button" class="close destroy-topic" aria-label="Close" data-topicId="{{this.id}}">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <h5 class="card-title text-center pb-4">{{this.subject}}</h5>
-        </a>
-      </div>
-      {{/each}}
-      
+    {{#each topic}}
+    <div class="col mb-4">
+      <a href="/view/{{this.id}}/0" class="topic-card card shadow-sm" data-topicId="{{this.id}}">
+        <div class="d-flex justify-content-end p-2">
+          <button type="button" class="close destroy-topic" aria-label="Close" data-topicId="{{this.id}}">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <h5 class="card-title text-center pb-4">{{this.subject}}</h5>
+      </a>
     </div>
-  </main>
+    {{/each}}
+
+  </div>
+</main>

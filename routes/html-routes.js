@@ -71,14 +71,19 @@ module.exports = function(app) {
       raw: true,
       where: {
         topicId: req.params.id
-      }
+      },
+      include: [db.Topic] 
     }).then(dbCard => {
       // dbCard gets an array of all the cards for this subject
-      var cardObject = {
+      // res.json(dbCard);
+      var card = dbCard[req.params.card]
         // This gets one card in the array referencing the :card param
-        card: dbCard[req.params.card]
+      var card2 = {...card, 
+        subject: card["Topic.subject"]
       }
-      res.render("view", cardObject);
+
+      // res.json(card);
+      res.render("view", card2);
     });
   });
 };
