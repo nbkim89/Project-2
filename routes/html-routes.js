@@ -11,7 +11,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
@@ -19,7 +19,7 @@ module.exports = function(app) {
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/main");
     }
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
   // If no matching route is found default to home.
   // app.get("*", (req, res) => {
-  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  //   res.sendFile(path.join(__dirname, "../public/login.html"));
   // });
 
   // Route for displaying all the topic cards ("index.handlebars")
@@ -71,14 +71,19 @@ module.exports = function(app) {
       raw: true,
       where: {
         topicId: req.params.id
-      }
+      },
+      include: [db.Topic] 
     }).then(dbCard => {
       // dbCard gets an array of all the cards for this subject
-      var cardObject = {
+      // res.json(dbCard);
+      var card = dbCard[req.params.card]
         // This gets one card in the array referencing the :card param
-        card: dbCard[req.params.card]
+      var card2 = {...card, 
+        subject: card["Topic.subject"]
       }
-      res.render("view", cardObject);
+
+      // res.json(card);
+      res.render("view", card2);
     });
   });
 };
