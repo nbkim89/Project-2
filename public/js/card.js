@@ -74,5 +74,31 @@ $(document).ready(function () {
     );
   });
 
+  $(".submit").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+
+    var newCard = {
+      term: $('#term').val().trim(),
+      definition: $('#definition').val().trim(),
+      topicId: $('.topic').data('topicid')
+    };
+
+    console.log(newCard)
+
+    // Send the POST request.
+    $.ajax(`/api/topics/${$('.topic').data('topicid')}/cards`, {
+      type: "POST",
+      data: newCard
+    }).then(
+      function() {
+        alert("created new card");
+        // Reload the page to get the updated list
+        // location.reload()
+        window.location.replace(`/create`)
+      }
+    );
+  });
+
 });
 
