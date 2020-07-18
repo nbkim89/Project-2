@@ -100,5 +100,25 @@ $(document).ready(function () {
     );
   });
 
+
+  // ****************
+  // DELETE
+  // ****************
+
+  $(".destroy-topic").on("click", function(event) {
+    var topicId = $('.topic-card').data("topicid");
+
+    // Send the DELETE request.
+    $.ajax("/api/cards/" + topicId, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted topic", id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
+
 });
 
