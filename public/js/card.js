@@ -51,8 +51,28 @@ $(document).ready(function () {
 
   });
 
+//Post for topic table
+  $(".create-topic").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
 
+    var newTopic = {
+      subject: $("#topic").val().trim(),
+    };
 
+    // Send the POST request.
+    $.ajax("/api/topics", {
+      type: "POST",
+      data: newTopic
+    }).then(
+      function() {
+        console.log("created new topic");
+        // Reload the page to get the updated list
+        // location.reload();
+        window.location.replace(`/create`)
+      }
+    );
+  });
 
 });
 
