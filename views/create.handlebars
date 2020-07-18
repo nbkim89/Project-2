@@ -1,7 +1,7 @@
 <!-- HEADER -->
 <div class="bg-primary p-4">
   <div class="d-flex justify-content-end">
-    <a href="/main" type="button" class="btn btn-light shadow-sm exit-save-topic">Exit and Save Topic</a>
+    <a href="/main" type="button" class="btn btn-light shadow-sm exit-save-topic" >Exit</a>
   </div>
   <a class="d-flex justify-content-center" href="/main">
     <img src="../public/assets/logo.png" alt="CampLit" class="img-fluid">
@@ -10,23 +10,23 @@
 <!-- MAIN -->
 <main class="container pt-5">
   <div class="card" id="flip-card">
-    <div class="flip-card">
-      <div class="flip-card-inner d-flex justify-content-center">
-
+    <div class="flip-card add-card">
+      <div class="flip-card-inner">
+        <form class="add-card d-flex justify-content-center">
         <!--****** CARD FRONT (TERM) ***** -->
         <div class="flip-card-front">
           <div class="card-body bg-white border shadow text-center p-5">
             <!-- TERM GOES HERE-->
-            <h5 class="text-muted">Topic: {{topic.[0].subject}}</h5>
+            <h5 class="text-muted topic" data-topicid="{{topic.[0].id}}">Topic: {{topic.[0].subject}}</h5>
             <div class="input-group input-group-lg front-input">
               <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
                 placeholder="Enter Term" id="term">
             </div>
-            <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip1">Add Definition</button>
+            <span class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip1">Add Definition</span>
           </div>
 
           <div class="d-flex justify-content-end mt-4">
-            <a href="/create" type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
+            <button type="button" type="submit" class="btn btn-warning shadow-sm submit">Add Another Card</button>
           </div>
 
         </div>
@@ -40,14 +40,15 @@
               <input type="text" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"
                 placeholder="Enter Definition" id="definition">
             </div>
-            <button class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip2">Add Term</button>
+            <span class="btn btn-primary mt-4 shadow-sm btn-flip" id="btnflip2">Add Term</span>
           </div>
 
           <div class="d-flex justify-content-end mt-4">
-            <a href="/create" type="button" class="btn btn-warning add-card shadow-sm add-card">Add Another Card</a>
+            <button type="button" type="submit" class="btn btn-warning shadow-sm submit">Add Another Card</button>
           </div>
 
         </div>
+        </form>
       </div>
     </div>
   </div>

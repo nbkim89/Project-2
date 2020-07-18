@@ -79,10 +79,11 @@ module.exports = function(app) {
       var card = dbCard[req.params.card]
         // This gets one card in the array referencing the :card param
       var card2 = {...card, 
-        subject: card["Topic.subject"]
+        subject: card["Topic.subject"],
+        position: req.params.card
       }
 
-      // res.json(card);
+      // res.json(card2);
       res.render("view", card2);
     });
   });

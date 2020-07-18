@@ -88,11 +88,12 @@ module.exports = function(app) {
   });
 
   // Route for creating a new card
-  app.post("/api/topics/:topic/cards", (req, res) => {
+  app.post("/api/topics/:topic", (req, res) => {
+    console.log(req.params.topic);
     db.Card.create({
       term: req.body.term,
       definition: req.body.definition,
-      topicId: req.params.topic
+      TopicId: req.params.topic
     }).then(dbCard => {
       res.json(dbCard);
     });
