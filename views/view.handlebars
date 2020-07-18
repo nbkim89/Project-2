@@ -17,15 +17,15 @@
         <div class="flip-card-front">
           <div class="card-body bg-white border shadow text-center p-5">
             <!-- TERM GOES HERE-->
-            <h5 class="text-muted">Topic: {{this.subject}}</h5>
+            <h5 class="text-muted topic" data-topic="{{this.topicId}}">Topic: {{this.subject}}</h5>
 
             <h4 class="pt-2">{{this.term}}</h4>
             <button class="btn btn-primary mt-3 shadow-sm btn-flip" id="btnflip1">See Definition</button>
           </div>
 
           <div class="d-flex justify-content-between mt-4">
-            <button type="button" class="btn btn-warning shadow-sm back">Back</button>
-            <button type="button" class="btn btn-warning shadow-sm next">Next</button>
+            <button type="button" class="btn btn-warning shadow-sm back" data-position="{{this.position}}">Back</button>
+            <button type="button" class="btn btn-warning shadow-sm next" data-position="{{this.position}}" >Next</button>
           </div>
 
         </div>
@@ -34,14 +34,14 @@
         <div class="flip-card-back">
           <div class="card-body bg-white border shadow text-center p-5">
             <!--DEFINITION GOES HERE-->
-            <h5 class="text-muted">Topic: {{this.subject}}</h5>
+            <h5 class="text-muted topic" data-topic="{{this.topicId}}">Topic: {{this.subject}}</h5>
             <h4 class="pt-2">{{this.definition}}</h4>
             <button class="btn btn-primary mt-3 shadow-sm btn-flip" id="btnflip2">See Term</button>
           </div>
 
           <div class="d-flex justify-content-between mt-4">
-            <button type="button" class="btn btn-warning shadow-sm back">Back</button>
-            <button type="button" class="btn btn-warning shadow-sm next">Next</button>
+            <button type="button" class="btn btn-warning shadow-sm back" data-position="{{this.position}}">Back</button>
+            <button type="button" class="btn btn-warning shadow-sm next" data-position="{{this.position}}">Next</button>
           </div>
 
         </div>
