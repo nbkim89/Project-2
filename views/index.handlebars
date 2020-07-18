@@ -15,11 +15,11 @@
     <div class="col mb-4">
       <a href="/view/{{this.id}}/0" class="topic-card card shadow-sm" data-topicId="{{this.id}}">
         <div class="d-flex justify-content-end p-2">
-          <button type="button" class="close destroy-topic" aria-label="Close" data-topicId="{{this.id}}">
+          {{!-- <button type="button" class="close destroy-topic" aria-label="Close" data-topicId="{{this.id}}">
             <span aria-hidden="true">&times;</span>
-          </button>
+          </button> --}}
         </div>
-        <h5 class="card-title text-center pb-4">{{this.subject}}</h5>
+        <h5 class="card-title text-center p-4">{{this.subject}}</h5>
       </a>
     </div>
     {{/each}}
