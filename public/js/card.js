@@ -92,7 +92,7 @@ $(document).ready(function () {
       data: newCard
     }).then(
       function() {
-        alert("created new card");
+        console.log("created new card");
         // Reload the page to get the updated list
         // location.reload()
         window.location.replace(`/create`)
