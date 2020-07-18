@@ -81,13 +81,13 @@ $(document).ready(function () {
     var newCard = {
       term: $('#term').val().trim(),
       definition: $('#definition').val().trim(),
-      topicId: $('.topic').data('topicid')
+      TopicId: $('.topic').data('topicid')
     };
 
     console.log(newCard)
 
     // Send the POST request.
-    $.ajax(`/api/topics/${$('.topic').data('topicid')}/cards`, {
+    $.ajax(`/api/topics/${$('.topic').data('topicid')}`, {
       type: "POST",
       data: newCard
     }).then(
