@@ -14,11 +14,11 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1]
       }
-    },
-    topicId: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     }
+    // topicId: {
+    //   type: DataTypes.INTEGER,
+    //   allowNull: false
+    // }
   });
 
   Card.associate = function(models) {
