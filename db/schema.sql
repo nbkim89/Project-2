@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS flashcards_db;
+DROP DATABASE IF EXISTS sglrw5f8uqwycqy1;
 
-CREATE DATABASE flashcards_db;
+CREATE DATABASE sglrw5f8uqwycqy1;
 
-USE flashcards_db;
+USE sglrw5f8uqwycqy1;
 
 CREATE TABLE cards (
   id int NOT NULL AUTO_INCREMENT,
