@@ -14,6 +14,6 @@ module.exports = function(sequelize, DataTypes) {
     Topic.hasMany(models.Card, {
       onDelete: "cascade"
     });
-  }
+  };
   return Topic;
 };
