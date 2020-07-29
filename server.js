@@ -12,7 +12,7 @@ const db = require("./models");
 // Creating express app and configuring middleware needed for authentication
 const app = express();
 
-app.use(compression());
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -26,6 +26,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(compression());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
