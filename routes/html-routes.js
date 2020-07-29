@@ -8,13 +8,13 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 var db = require("../models");
 
 module.exports = function(app) {
-  app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/main");
-    }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  });
+  // app.get("/", (req, res) => {
+  //   // If the user already has an account send them to the members page
+  //   if (req.user) {
+  //     res.redirect("/main");
+  //   }
+  //   res.sendFile(path.join(__dirname, "../public/signup.html"));
+  // });
 
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
@@ -36,7 +36,7 @@ module.exports = function(app) {
   // });
 
   // Route for displaying all the topic cards ("index.handlebars")
-  app.get("/main", (req, res) => {
+  app.get("/", (req, res) => {
     db.Topic.findAll({ raw: true }).then(function(data) {
       var topicsObject = {
         topic: data
